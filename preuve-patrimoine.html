@@ -20,11 +20,11 @@
 
             <div class="proof-section">
                 <h2>Activité 4 : Audit et correction de bases de données (Affaires à risque)</h2>
-                <p><strong>Cahier des charges :</strong> Le groupe utilise l'ERP Espace Affaire pour gérer les devis, commandes et factures. Avant de nettoyer l'environnement de test de la filiale BASC CI ELEC, l'objectif était de comparer deux bases de données (<code>EA_FLEX</code> et <code>EA_FLEX_OLD</code>) pour détecter les écarts et les corriger[cite: 8].</p>
+                <p><strong>Cahier des charges :</strong> Le groupe utilise l'ERP Espace Affaire pour gérer les devis, commandes et factures. Avant de nettoyer l'environnement de test de la filiale BASC CI ELEC, l'objectif était de comparer deux bases de données (<code>EA_FLEX</code> et <code>EA_FLEX_OLD</code>) pour détecter les écarts et les corriger.</p>
                 <p><strong>Démarche et mode opératoire :</strong></p>
                 <ul>
                     <li>Comptage du nombre de lignes pour chaque table afin d'isoler les tables présentant des différences d'effectifs.</li>
-                    <li>Écriture de requêtes d'audit SQL sous SQL Server Management Studio avec des clauses <code>LEFT JOIN</code> et <code>NOT EXISTS</code> (notamment sur les tables <code>M_FIELD</code> et <code>M_FILE</code>)[cite: 8].</li>
+                    <li>Écriture de requêtes d'audit SQL sous SQL Server Management Studio avec des clauses <code>LEFT JOIN</code> et <code>NOT EXISTS</code> (notamment sur les tables <code>M_FIELD</code> et <code>M_FILE</code>).</li>
                     <li>Génération et exécution de scripts <code>INSERT</code> pour réintégrer les enregistrements manquants et garantir la parité des deux bases.</li>
                 </ul>
 
@@ -40,10 +40,7 @@ WHERE NOT EXISTS (
 );
                 </div>
 
-                <div class="oral-notes">
-                    <h4>Explication pour l'oral :</h4>
-                    <p>« Lors de cette mission, j'ai vérifié l'intégrité des données entre deux bases de données de l'ERP Espace Affaire. En utilisant des requêtes SQL avancées avec la clause NOT EXISTS, j'ai identifié précisément les lignes absentes dans la base cible puis j'ai rédigé des scripts d'insertion SQL pour réaligner parfaitement les données avant nettoyage du serveur[cite: 8]. »</p>
-                </div>
+        
 
                 <p><strong>Preuves de réalisation :</strong></p>
                 <div class="proof-img-group">
@@ -60,7 +57,7 @@ WHERE NOT EXISTS (
 
             <div class="proof-section">
                 <h2>Activité 5 : Matrice des droits d'accès Active Directory</h2>
-                <p><strong>Cahier des charges :</strong> Pour des motifs de sécurité et de conformité, la DSID devait connaître avec précision la répartition des permissions accordées sur les dossiers partagés des serveurs de fichiers pour chaque filiale du groupe[cite: 8].</p>
+                <p><strong>Cahier des charges :</strong> Pour des motifs de sécurité et de conformité, la DSID devait connaître avec précision la répartition des permissions accordées sur les dossiers partagés des serveurs de fichiers pour chaque filiale du groupe.</p>
                 <p><strong>Démarche et mode opératoire :</strong></p>
                 <ul>
                     <li>Exploitation d'un export brut répertoriant les groupes Active Directory affectés aux dossiers partagés.</li>
@@ -69,10 +66,7 @@ WHERE NOT EXISTS (
                     <li>Rdaction d'une procédure d'utilisation synthétique à destination des techniciens de la DSID pour réexécuter le traitement à la demande.</li>
                 </ul>
 
-                <div class="oral-notes">
-                    <h4>Explication pour l'oral :</h4>
-                    <p>« Pour rendre lisible la gestion des habilitations sur les serveurs de fichiers, j'ai contribué au développement d'une macro VBA générique. Le script parcourt la liste des groupes Active Directory, identifie les droits à partir de leurs suffixes (_RW / _RD) et génère une matrice visuelle avec mise en forme conditionnelle automatique[cite: 8]. J'ai également rédigé la documentation technique[cite: 8]. »</p>
-                </div>
+            
 
                 <p><strong>Preuve de réalisation :</strong></p>
                 <div class="proof-img-group">
