@@ -55,11 +55,6 @@ EXEC msdb.dbo.sp_send_dbmail
     @body = '<h3>Résultat des transferts nocturnes</h3>...',
     @body_format = 'HTML';
                 </div>
-
-                <div class="oral-notes">
-                    <h4>Explication pour l'oral :</h4>
-                    <p>« J'ai automatisé la surveillance des flux ETL qui alimentent la base décisionnelle du groupe. Pour éviter d'exécuter 40 requêtes successives, j'ai optimisé le code SQL en une requête centralisée, puis planifié une alerte via SQL Server Agent qui envoie un mail HTML récapitulatif chaque matin aux administrateurs avec le statut vert (OK) ou rouge (KO). »</p>
-                </div>
             </div>
         </div>
     </div>
