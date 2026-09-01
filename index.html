@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio E5 — Adrien Mouly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas-bg"></canvas>
+
+    <header>
+        <div class="logo">&lt;AM/&gt;</div>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#profil">Profil</a></li>
+                <li><a href="#e5">Épreuve E5</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Adrien <span>Mouly</span></h1>
+            <p>Étudiant BTS SIO — Option SLAM (Institut Limayrac)</p>
+            <p class="subtitle">Support, administration de bases de données et automatisation</p>
+            <br>
+            <a href="#e5" class="btn">Accéder aux compétences du Bloc 1</a>
+        </div>
+    </section>
+
+    <section id="profil">
+        <h2 class="section-title">Mon Profil</h2>
+        <div class="about-grid">
+            <div class="cv-card">
+                <h3>Présentation</h3>
+                <p>
+                    Étudiant en BTS SIO (Option SLAM) à l'Institut Limayrac de Toulouse. 
+                    J'ai réalisé mon stage de 6 semaines au sein de la Direction du Service Informatique Digital (DSID) du Groupe CLIMATER à Toulouse, sous la tutelle du responsable infrastructure et réseaux.
+                </p>
+                <br>
+                <p><i class="fas fa-map-marker-alt"></i> Toulouse / Cahors</p>
+                <p><i class="fas fa-envelope"></i> adrienmouly588@gmail.com</p>
+            </div>
+
+            <div class="cv-card">
+                <h3>Environnement Technique Pratiqué</h3>
+                <div class="skills-container">
+                    <span class="skill-tag">SQL Server / SSMS</span>
+                    <span class="skill-tag">PowerShell</span>
+                    <span class="skill-tag">VBA Excel</span>
+                    <span class="skill-tag">Active Directory</span>
+                    <span class="skill-tag">Supervision ETL</span>
+                    <span class="skill-tag">Helpdesk Prove IT / AnyDesk</span>
+                    <span class="skill-tag">Python (Bases)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="e5">
+        <h2 class="section-title">Portefeuille de Compétences (Bloc 1)</h2>
+        <p>Clique sur chaque compétence acquise pendant mon stage pour consulter les explications détaillées et les éléments de soutenance oral.</p>
+        
+        <div class="e5-container">
+            <div class="e5-card">
+                <h3>Gérer le patrimoine informatique</h3>
+                <p>Audit des bases ERP (Espace Affaire) et cartographie automatisée des habilitations sur les serveurs de fichiers.</p>
+                <div class="realisation-box">
+                    <small>Missions associées :</small>
+                    <p>Audit SQL Server & Matrice de droits d'accès VBA.</p>
+                    <a href="preuve-patrimoine.html" class="btn btn-sm">Voir détails et explications</a>
+                </div>
+            </div>
+
+            <div class="e5-card">
+                <h3>Répondre aux incidents & demandes</h3>
+                <p>Découverte et observation de l'organisation du support informatique de niveaux 1 et 2 et des outils associés.</p>
+                <div class="realisation-box">
+                    <small>Missions associées :</small>
+                    <p>Observation Helpdesk N1/N2, Prove IT & AnyDesk.</p>
+                    <a href="preuve-incidents.html" class="btn btn-sm">Voir détails et explications</a>
+                </div>
+            </div>
+
+            <div class="e5-card">
+                <h3>Travailler en mode projet</h3>
+                <p>Création d'une base de données d'entraînement et requêtage automatisé par scripts PowerShell.</p>
+                <div class="realisation-box">
+                    <small>Missions associées :</small>
+                    <p>Mini-projet BDD, requêtes SQL & exports CSV.</p>
+                    <a href="preuve-projet.html" class="btn btn-sm">Voir détails et explications</a>
+                </div>
+            </div>
+
+            <div class="e5-card">
+                <h3>Mettre à disposition des services</h3>
+                <p>Mise en place de scripts d'alerte et de contrôles automatisés sur les flux d'intégration de données nocturnes.</p>
+                <div class="realisation-box">
+                    <small>Missions associées :</small>
+                    <p>Supervision des transferts ETL & alertes SQL Agent Mail.</p>
+                    <a href="preuve-services.html" class="btn btn-sm">Voir détails et explications</a>
+                </div>
+            </div>
+
+            <div class="e5-card">
+                <h3>Organiser son développement pro.</h3>
+                <p>Découverte des métiers du support, auto-formation sur PowerShell/SQL et mise en place d'une veille technologique.</p>
+                <div class="realisation-box">
+                    <small>Missions associées :</small>
+                    <p>Bilan d'apprentissage et veille informationnelle.</p>
+                    <a href="preuve-veille.html" class="btn btn-sm">Voir détails et explications</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Parcours professionnel</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="date">Août 2026 (2 semaines)</span>
+                <h3>Agent d'entretien et de collecte</h3>
+                <p><strong>Grand Cahors</strong></p>
+                <p>Agent d'entretien et service de collecte des ordures ménagères.</p>
+            </div>
+            
+            <div class="timeline-item">
+                <span class="date">Juillet 2026 (1 mois)</span>
+                <h3>Opérateur en usine</h3>
+                <p><strong>Usine DUCASTEL — Castelfranc</strong></p>
+                <p>Travail de conditionnement et d'exécution en usine.</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="date">18 mai — 26 juin 2026 (6 semaines)</span>
+                <h3>Stagiaire DSID (Infrastructure & BDD)</h3>
+                <p><strong>Groupe CLIMATER — Toulouse</strong></p>
+                <p>Stage de 1re année BTS SIO : automatisation PowerShell, requêtes SQL Server, supervision d'ETL et matrice des accès Active Directory.</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="date">Juin — Août 2025</span>
+                <h3>Préparateur de commandes</h3>
+                <p><strong>E.Leclerc Drive</strong></p>
+                <p>Préparation des commandes clients et gestion des stocks en entrepôt.</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="date">Décembre 2024</span>
+                <h3>Stagiaire informatique</h3>
+                <p><strong>AXIANS Cloud — Toulouse</strong></p>
+                <p>Gestion du parc informatique (inventaire, approvisionnement) et immersion auprès des techniciens.</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="date">Juillet — Août 2024</span>
+                <h3>Opérateur de conditionnement</h3>
+                <p><strong>Entreprise DUCASTEL</strong></p>
+                <p>Conditionnement de produits et opérations de chaîne de production.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="text-align: center;">
+        <h2 class="section-title">Contact</h2>
+        <p>Adrien Mouly — 07 69 15 72 95</p>
+        <p>13 rue Joseph Bosc, 31000 Toulouse</p>
+        <br>
+        <a href="mailto:adrienmouly588@gmail.com" class="btn">Envoyer un message</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Adrien Mouly — Portfolio Épreuve E5 BTS SIO</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

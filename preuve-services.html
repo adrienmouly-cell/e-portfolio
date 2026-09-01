@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preuves — Mettre à disposition des services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="proof-page">
+        <div class="proof-container">
+            <a href="index.html#e5" class="back-btn"><i class="fas fa-arrow-left"></i> Retour au Portfolio</a>
+            
+            <h1>Mettre à disposition des services informatiques</h1>
+            <p><strong>Contexte :</strong> Supervision automatisée de l'intégration nocturne des données financières des filiales.</p>
+
+            <div class="proof-section">
+                <h2>Activité 3 : Supervision automatique des flux ETL nocturnes</h2>
+                <p><strong>Cahier des charges :</strong> Les traitements nocturnes (ETL) rapatrient les données comptables de plus de 40 filiales dans la base centralisée <code>R1_DW_CLIMATER_COMPTA_API</code>. En cas d'échec d'un flux, les rapports d'activité deviennent inexacts. L'objectif était de mettre en place une alerte quotidienne automatique informant l'équipe informatique dès qu'un dysfonctionnement survient.</p>
+                <p><strong>Démarche et mode opératoire :</strong></p>
+                <ul>
+                    <li>Développement d'un script de contrôle global affichant le statut de chaque brique applicative (Achats, Compta, Paye).</li>
+                    <li>Développement d'un suivi détaillé identifiant la filiale exacte en anomalie (détection des volumes de lignes nuls et de la date du dernier transfert).</li>
+                    <li>Optimisation des performances : regroupement de plus de 40 requêtes isolées en une requête unique optimisée à l'aide de jointures (<code>LEFT JOIN</code> et <code>UNION ALL</code>).</li>
+                    <li>Planification de la tâche via SQL Server Agent et envoi automatique d'un rapport HTML par courriel chaque matin au moyen de la procédure <code>sp_send_dbmail</code>.</li>
+                </ul>
+
+                <h3>Captures de réalisation :</h3>
+                
+                <figure class="proof-figure">
+                    <img src="images/etl-script.jpg" alt="Script PowerShell ETL" class="proof-img">
+                    <figcaption>Figure 1 : Script PowerShell d'analyse et d'extraction du statut des flux ETL</figcaption>
+                </figure>
+
+                <figure class="proof-figure">
+                    <img src="images/etl-tableau.jpg" alt="Tableau des erreurs par filiale" class="proof-img">
+                    <figcaption>Figure 2 : Tableau généré identifiant précisément les filiales en erreur d'intégration</figcaption>
+                </figure>
+
+                <figure class="proof-figure">
+                    <img src="images/etl-agent.jpg" alt="Configuration SQL Server Agent" class="proof-img">
+                    <figcaption>Figure 3 : Tâche SQL Server Agent configurée pour l'envoi automatique des alertes par mail</figcaption>
+                </figure>
+
+                <div class="code-block">
+-- Exemple d'exécution du composant sp_send_dbmail
+EXEC msdb.dbo.sp_send_dbmail
+    @profile_name = 'MyReport_Sql_Server_Agent_Alertes',
+    @recipients = 'a.mouly@groupe-climater.com',
+    @subject = 'Alerte Supervision ETL - Statut des flux',
+    @body = '<h3>Résultat des transferts nocturnes</h3>...',
+    @body_format = 'HTML';
+                </div>
+
+                <div class="oral-notes">
+                    <h4>Explication pour l'oral :</h4>
+                    <p>« J'ai automatisé la surveillance des flux ETL qui alimentent la base décisionnelle du groupe. Pour éviter d'exécuter 40 requêtes successives, j'ai optimisé le code SQL en une requête centralisée, puis planifié une alerte via SQL Server Agent qui envoie un mail HTML récapitulatif chaque matin aux administrateurs avec le statut vert (OK) ou rouge (KO). »</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Adrien Mouly — BTS SIO E5</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

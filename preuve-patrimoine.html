@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preuves — Gérer le patrimoine informatique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="proof-page">
+        <div class="proof-container">
+            <a href="index.html#e5" class="back-btn"><i class="fas fa-arrow-left"></i> Retour au Portfolio</a>
+            
+            <h1>Gérer le patrimoine informatique</h1>
+            <p><strong>Contexte :</strong> Missions d'audit et de sécurisation réalisées au sein de la DSID du Groupe CLIMATER.</p>
+
+            <div class="proof-section">
+                <h2>Activité 4 : Audit et correction de bases de données (Affaires à risque)</h2>
+                <p><strong>Cahier des charges :</strong> Le groupe utilise l'ERP Espace Affaire pour gérer les devis, commandes et factures. Avant de nettoyer l'environnement de test de la filiale BASC CI ELEC, l'objectif était de comparer deux bases de données (<code>EA_FLEX</code> et <code>EA_FLEX_OLD</code>) pour détecter les écarts et les corriger[cite: 8].</p>
+                <p><strong>Démarche et mode opératoire :</strong></p>
+                <ul>
+                    <li>Comptage du nombre de lignes pour chaque table afin d'isoler les tables présentant des différences d'effectifs.</li>
+                    <li>Écriture de requêtes d'audit SQL sous SQL Server Management Studio avec des clauses <code>LEFT JOIN</code> et <code>NOT EXISTS</code> (notamment sur les tables <code>M_FIELD</code> et <code>M_FILE</code>)[cite: 8].</li>
+                    <li>Génération et exécution de scripts <code>INSERT</code> pour réintégrer les enregistrements manquants et garantir la parité des deux bases.</li>
+                </ul>
+
+                <div class="code-block">
+-- Exemple de requête de comptage et comparaison d'écart
+DECLARE @SourceDB SYSNAME = 'EA_FLEX';
+DECLARE @TargetDB SYSNAME = 'EA_FLEX_OLD';
+
+SELECT * FROM EA_FLEX_OLD.dbo.M_FIELD A
+WHERE NOT EXISTS (
+    SELECT 1 FROM EA_FLEX.dbo.M_FIELD B 
+    WHERE B.ID = A.ID
+);
+                </div>
+
+                <div class="oral-notes">
+                    <h4>Explication pour l'oral :</h4>
+                    <p>« Lors de cette mission, j'ai vérifié l'intégrité des données entre deux bases de données de l'ERP Espace Affaire. En utilisant des requêtes SQL avancées avec la clause NOT EXISTS, j'ai identifié précisément les lignes absentes dans la base cible puis j'ai rédigé des scripts d'insertion SQL pour réaligner parfaitement les données avant nettoyage du serveur[cite: 8]. »</p>
+                </div>
+
+                <p><strong>Preuves de réalisation :</strong></p>
+                <div class="proof-img-group">
+                    <div class="proof-img-item">
+                        <img src="images/sql-comparaison.jpg" alt="Comparaison du nombre de lignes entre EA_FLEX et EA_FLEX_OLD, colonne Difference" class="proof-img">
+                        <p class="proof-img-caption">Figure 8 : Comparaison du nombre de lignes EA_FLEX / EA_FLEX_OLD (colonne « Difference »)</p>
+                    </div>
+                    <div class="proof-img-item">
+                        <img src="images/sql-ecarts.jpg" alt="Écarts repérés entre les bases" class="proof-img">
+                        <p class="proof-img-caption">Figure 9 : Écarts repérés entre les deux bases, à réintégrer (en vert et en jaune)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proof-section">
+                <h2>Activité 5 : Matrice des droits d'accès Active Directory</h2>
+                <p><strong>Cahier des charges :</strong> Pour des motifs de sécurité et de conformité, la DSID devait connaître avec précision la répartition des permissions accordées sur les dossiers partagés des serveurs de fichiers pour chaque filiale du groupe[cite: 8].</p>
+                <p><strong>Démarche et mode opératoire :</strong></p>
+                <ul>
+                    <li>Exploitation d'un export brut répertoriant les groupes Active Directory affectés aux dossiers partagés.</li>
+                    <li>Participation à la conception d'une macro VBA Excel analysant la nomenclature des groupes (reconnaissance des suffixes <code>_RW</code> pour Lecture/Écriture et <code>_RD</code> pour Lecture seule).</li>
+                    <li>Application automatique d'un code couleur : vert pour la lecture/écriture, jaune pour la lecture seule, et blanc en l'absence d'accès.</li>
+                    <li>Rdaction d'une procédure d'utilisation synthétique à destination des techniciens de la DSID pour réexécuter le traitement à la demande.</li>
+                </ul>
+
+                <div class="oral-notes">
+                    <h4>Explication pour l'oral :</h4>
+                    <p>« Pour rendre lisible la gestion des habilitations sur les serveurs de fichiers, j'ai contribué au développement d'une macro VBA générique. Le script parcourt la liste des groupes Active Directory, identifie les droits à partir de leurs suffixes (_RW / _RD) et génère une matrice visuelle avec mise en forme conditionnelle automatique[cite: 8]. J'ai également rédigé la documentation technique[cite: 8]. »</p>
+                </div>
+
+                <p><strong>Preuve de réalisation :</strong></p>
+                <div class="proof-img-group">
+                    <div class="proof-img-item">
+                        <img src="images/vba-matrice.jpg" alt="Matrice des droits d'accès AD" class="proof-img">
+                        <p class="proof-img-caption">Figure 10 : Matrice des droits d'accès générée (vert = lecture/écriture, jaune = lecture seule)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Adrien Mouly — BTS SIO E5</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
