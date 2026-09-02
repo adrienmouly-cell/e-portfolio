@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planning & Diagrammes de Gantt — BTS SIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chargement et initialisation de Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+        });
+    </script>
+</head>
+<body>
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="proof-page">
+        <div class="proof-container">
+            <a href="index.html#e5" class="back-btn"><i class="fas fa-arrow-left"></i> Retour au Portfolio</a>
+            
+            <h1>Planification des activités & Diagrammes de Gantt</h1>
+            <p><strong>Présentation :</strong> Chronologie détaillée des travaux réalisés durant le stage en entreprise et le parcours académique.</p>
+
+            <!-- SECTION 1 : STAGE CLIMATER -->
+            <div class="proof-section">
+                <h2>1. Planning du Stage — Groupe CLIMATER</h2>
+                <p><strong>Période :</strong> 18 mai 2026 — 26 juin 2026</p>
+                
+                <div class="mermaid">
+                gantt
+                    title Stage CLIMATER (18 mai - 26 juin 2026)
+                    dateFormat YYYY-MM-DD
+                    axisFormat %d/%m
+
+                    section Fil rouge
+                    Supervision automatique des flux ETL nocturnes :active, etl, 2026-05-18, 2026-06-26
+
+                    section Support & Infrastructure
+                    Découverte de l'organisation du support (N1/N2) :sup, 2026-05-18, 3d
+
+                    section Patrimoine IT
+                    Audit et correction de BDD (Affaires à risque) :audit, 2026-05-26, 3d
+                    Matrice des droits d'accès Active Directory :ad, 2026-06-01, 5d
+                </div>
+            </div>
+
+            <!-- SECTION 2 : PROJETS ACADÉMIQUES -->
+            <div class="proof-section">
+                <h2>2. Planning des Projets Académiques</h2>
+                
+                <div class="mermaid">
+                gantt
+                    title Projets Académiques BTS SIO
+                    dateFormat YYYY-MM-DD
+                    axisFormat %m/%Y
+
+                    section Réalisations
+                    Application web FAQ — Maison des Ligues (M2L) :m2l, 2026-01-12, 60d
+                    Mini-projet BDD & PowerShell                  :ps, 2026-03-23, 2d
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Adrien Mouly — BTS SIO E5</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
