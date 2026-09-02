@@ -16,9 +16,9 @@
             <a href="index.html#e5" class="back-btn"><i class="fas fa-arrow-left"></i> Retour au Portfolio</a>
             
             <h1>Travailler en mode projet</h1>
-            <p><strong>Contexte :</strong> Réalisation de projets informatiques collaboratifs et individuels (développement d'outils d'extraction, requêtage et applications web).</p>
+            <p><strong>Contexte :</strong> Réalisation de projets informatiques collaboratifs et individuels (développement d'applications web, automatisation de scripts et requêtage sur serveur dédié).</p>
 
-            <!-- NOUVELLE ACTIVITÉ : AppFaq M2L -->
+            <!-- ACTIVITÉ 1 : AppFaq M2L -->
             <div class="proof-section">
                 <h2>Activité 1 : Application web FAQ — Maison des Ligues (M2L)</h2>
                 <p><strong>Cahier des charges :</strong> Conception et réalisation en équipe de 5 étudiants d'une plateforme centralisée de foire aux questions pour les membres et responsables de ligues sportives, intégrant une gestion stricte des droits (Visiteur, Admin Ligue, Super Admin).</p>
@@ -27,7 +27,7 @@
                     <li>Répartition des rôles au sein du groupe (conception BDD, maquettage IHM, authentification, modération et conteneurisation).</li>
                     <li>Modélisation conceptuelle, logique et physique de la base de données (MCD, MLD, MPD) et élaboration du Diagramme de Cas d'Utilisation (DCU) sous Draw.io.</li>
                     <li>Développement collaboratif de l'application en PHP/MySQL avec architecture modulaire et requêtes préparées (PDO).</li>
-                    <li>Sécurisation des accès (hachage `password_hash()`, protection contre les failles XSS) et déploiement sous Docker Compose.</li>
+                    <li>Sécurisation des accès (hachage <code>password_hash()</code>, protection contre les failles XSS) et déploiement sous Docker Compose.</li>
                 </ul>
 
                 <div class="code-block">
@@ -62,7 +62,7 @@ $stmt->execute();
                 </div>
             </div>
 
-            <!-- ACTIVITÉ EXISTANTE : PowerShell & SQL Server -->
+            <!-- ACTIVITÉ 2 : SQL Server & PowerShell -->
             <div class="proof-section">
                 <h2>Activité 2 : Mini-projet base de données (SQL Server et PowerShell)</h2>
                 <p><strong>Cahier des charges :</strong> Concevoir une base de données de test sur le serveur <code>SRV-SQLEAF-LAB</code> (base <code>MINIPROJET</code>) et développer des scripts PowerShell autonomes capables d'interroger la base et d'exporter les résultats pour les métiers sans accès direct à SQL Server.</p>
@@ -74,21 +74,20 @@ $stmt->execute();
                     <li>Automatisation de l'extraction des données brutes vers des fichiers d'échange au format CSV (<code>Export-Csv</code>).</li>
                 </ul>
 
-                <div class="code-block">
-# Script PowerShell d'extraction dynamique
-$server = "SRV-SQLEAF-LAB"
-$database = "MINIPROJET"
-$service = Read-Host "Entrez le nom du service"
-
-$query = "SELECT * FROM Employes WHERE Service = '$service'"
-Invoke-Sqlcmd -ServerInstance $server -Database $database -Query $query | Export-Csv -Path "C:\Exports\$service.csv" -NoTypeInformation
-                </div>
+                <blockquote class="oral-box">
+                    <p><strong>Explication pour l'oral :</strong></p>
+                    <p>« Ce mini-projet m'a permis de lier le scripting PowerShell aux bases de données SQL Server. J'ai créé un script qui permet à un utilisateur non-technicien de saisir le nom d'un service, d'exécuter la requête en arrière-plan et d'obtenir immédiatement un fichier CSV exploitable contenant les données extraites. »</p>
+                </blockquote>
 
                 <p><strong>Preuves de réalisation :</strong></p>
                 <div class="proof-img-group">
                     <div class="proof-img-item">
-                        <img src="images/powershell-export.png" alt="Execution du script PowerShell" class="proof-img">
-                        <p class="proof-img-caption">Figure 3 : Exécution du script d'extraction PowerShell et génération du fichier CSV</p>
+                        <img src="images/ps-apprentissage.jpg" alt="Apprentissage PowerShell" class="proof-img">
+                        <p class="proof-img-caption">Figure 3 : Apprentissage de PowerShell (commande Get-ChildItem avec ForEach-Object)</p>
+                    </div>
+                    <div class="proof-img-item">
+                        <img src="images/table-employes.png" alt="Résultat du mini-projet table employés" class="proof-img">
+                        <p class="proof-img-caption">Figure 4 : Résultat du mini-projet – la table des employés avec leur service et leur salaire</p>
                     </div>
                 </div>
             </div>
