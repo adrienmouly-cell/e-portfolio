@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Chargement et initialisation de Mermaid.js -->
+    <!-- Script Mermaid.js pour le rendu des diagrammes -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -24,28 +24,33 @@
             <a href="index.html#e5" class="back-btn"><i class="fas fa-arrow-left"></i> Retour au Portfolio</a>
             
             <h1>Planification des activités & Diagrammes de Gantt</h1>
-            <p><strong>Présentation :</strong> Chronologie détaillée des travaux réalisés durant le stage en entreprise et le parcours académique.</p>
+            <p><strong>Présentation :</strong> Chronologie des travaux réalisés durant le stage en entreprise et le parcours académique (jours ouvrés).</p>
 
             <!-- SECTION 1 : STAGE CLIMATER -->
             <div class="proof-section">
                 <h2>1. Planning du Stage — Groupe CLIMATER</h2>
-                <p><strong>Période :</strong> 18 mai 2026 — 26 juin 2026</p>
+                <p><strong>Période :</strong> 18 mai 2026 — 26 juin 2026 (Du lundi au vendredi)</p>
                 
                 <div class="mermaid">
                 gantt
                     title Stage CLIMATER (18 mai - 26 juin 2026)
                     dateFormat YYYY-MM-DD
                     axisFormat %d/%m
+                    excludes weekends
 
                     section Fil rouge
-                    Supervision automatique des flux ETL nocturnes :active, etl, 2026-05-18, 2026-06-26
+                    Supervision quotidienne des flux ETL       :active, etl, 2026-05-18, 2026-06-26
 
-                    section Support & Infrastructure
-                    Découverte de l'organisation du support (N1/N2) :sup, 2026-05-18, 3d
+                    section Support & Infra
+                    Découverte du support (N1/N2) - 3j         :sup, 2026-05-18, 2026-05-20
 
                     section Patrimoine IT
-                    Audit et correction de BDD (Affaires à risque) :audit, 2026-05-26, 3d
-                    Matrice des droits d'accès Active Directory :ad, 2026-06-01, 5d
+                    Audit et correction BDD - 3j              :audit, 2026-05-21, 2026-05-25
+                    Matrice des accès Active Directory        :ad, 2026-05-28, 2026-06-05
+
+                    section Mode Projet & Scripting
+                    Mini-projet SQL Server & PowerShell - 2j  :ps, 2026-05-26, 2026-05-27
+                    Développement scripts alertes ETL & BDD    :dev, 2026-06-08, 2026-06-26
                 </div>
             </div>
 
@@ -58,10 +63,11 @@
                     title Projets Académiques BTS SIO
                     dateFormat YYYY-MM-DD
                     axisFormat %m/%Y
+                    excludes weekends
 
-                    section Réalisations
-                    Application web FAQ — Maison des Ligues (M2L) :m2l, 2026-01-12, 60d
-                    Mini-projet BDD & PowerShell                  :ps, 2026-03-23, 2d
+                    section Application Web FAQ (M2L)
+                    Conception BDD & Maquettage (Février)  :m2l_phase1, 2026-02-02, 2026-02-27
+                    Développement PHP/PDO & Docker (Mars)  :m2l_phase2, 2026-03-02, 2026-03-31
                 </div>
             </div>
 
