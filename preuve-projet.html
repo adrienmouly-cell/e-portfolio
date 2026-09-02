@@ -7,39 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Ajustement de la taille des vignettes d'images */
-        .proof-img-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
-        .proof-img-item {
-            flex: 0 1 220px;
-            max-width: 240px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-        .proof-img {
-            width: 100%;
-            max-height: 130px;
-            object-fit: contain;
-            border-radius: 4px;
-            display: block;
-        }
-        .proof-img-caption {
-            font-size: 0.75rem;
-            margin-top: 6px;
-            margin-bottom: 0;
-            line-height: 1.2;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <canvas id="canvas-bg"></canvas>
@@ -102,13 +69,15 @@ $stmt->execute();
                 </div>
 
                 <p><em>2. Fonctionnalités du forum et parcours utilisateur</em></p>
+                <div class="proof-img-group">
+                    </div>
                     <div class="proof-img-item">
                         <img src="images/m2l-poser-question.png" alt="Formulaire de rédaction d'une question" class="proof-img">
                         <p class="proof-img-caption">Figure 5 : Rédaction d'une question</p>
                     </div>
                     <div class="proof-img-item">
                         <img src="images/m2l-question-postee.png" alt="Question publiée sur le forum" class="proof-img">
-                        <p class="proof-img-caption">Figure 6 : Question publiée en attente</p>
+                        <p class="proof-img-caption">Figure 6 : Question publiée en attente de réponse</p>
                     </div>
                 </div>
             </div>
@@ -133,11 +102,11 @@ $stmt->execute();
                 <p><strong>Preuves de réalisation :</strong></p>
                 <div class="proof-img-group">
                     <div class="proof-img-item">
-                        <img src="images/powershell-cmd.png" alt="Apprentissage PowerShell" class="proof-img">
+                        <img src="images/ps-apprentissage.jpg" alt="Apprentissage PowerShell" class="proof-img">
                         <p class="proof-img-caption">Figure 7 : Commande PowerShell Get-ChildItem</p>
                     </div>
                     <div class="proof-img-item">
-                        <img src="images/table-employes.png" alt="Résultat du mini-projet table employés" class="proof-img">
+                        <img src="images/ps-resultat.jpg" alt="Résultat du mini-projet table employés" class="proof-img">
                         <p class="proof-img-caption">Figure 8 : Export de la table des employés</p>
                     </div>
                 </div>
